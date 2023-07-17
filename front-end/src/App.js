@@ -1,3 +1,5 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
@@ -12,10 +14,12 @@ function App() {
 
 
   return (
-    <div className="App">
-      movies
-      {movies.map(movies => <li>{movies.title}</li>)}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<>you're home</>}/>
+        <Route path="/movies" element={<>you're in movies</>}/>
+      </Routes>
+    </Router>
   );
 }
 
